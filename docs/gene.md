@@ -14,8 +14,11 @@ service project; the portable adapter template is for a new installation.
 
 ## Updating the pair
 
-1. Review and publish the adapter commit first. Update Gene's direct Git dependency
-   to that exact full SHA and regenerate `uv.lock`. Never track an adapter branch tip.
+1. Review and publish the adapter commit first. Update Gene's `ops/audio-adapter.json`
+   with its exact full SHA, version and module hashes. Gene's image/development helper
+   installs that verified bundle separately from its core dependency environment;
+   its host controller services do not need the adapter. Keep the core lock and release
+   dependency gate unchanged. Never track an adapter branch tip.
 2. Run the adapter suite, Gene's full suite, lint and release-script mock tests. Check
    the installed wheel's compatibility imports. If Fri's compatibility suite depends
    on the changed paths, run it against the same Gene candidate.
