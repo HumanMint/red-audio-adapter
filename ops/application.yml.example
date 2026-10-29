@@ -1,0 +1,25 @@
+# Copy privately to AUDIO_CONFIG_DIR/application.yml and replace both placeholders.
+server:
+  port: 2333
+  address: 0.0.0.0
+lavalink:
+  server:
+    password: "REPLACE_WITH_PRIVATE_LAVALINK_PASSWORD"
+    sources:
+      youtube: false
+      bandcamp: true
+      soundcloud: true
+      twitch: false
+      vimeo: false
+      http: false
+      local: false
+    playerUpdateInterval: 5
+    trackStuckThresholdMs: 10000
+plugins:
+  geneYoutube:
+    url: http://127.0.0.1:2334
+    token: "REPLACE_WITH_PRIVATE_RESOLVER_TOKEN"
+    cache: /media
+logging:
+  level:
+    root: WARN
